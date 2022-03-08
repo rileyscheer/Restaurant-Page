@@ -17,6 +17,37 @@ const firstImg = document.createElement('img');
 const secondImg = document.createElement('img');
 const thirdImg = document.createElement('img');
 const fourthImg = document.createElement('img');
+const contactInfo = document.createElement('div');
+
+function loadContact(){
+    contactInfo.classList.add('info')
+    contactInfo.textContent = "Phone: ###-###-#### \nEmail: noreply@email.com \nAddress: 123 Fake Street Lane";
+    parent.appendChild(contactInfo)
+}
+
+home.addEventListener('click', function(){
+    clearAll()
+    pageLoad()
+})
+
+menu.addEventListener('click', function(){
+    clearAll()
+    loadMenu()
+})
+
+contact.addEventListener('click', function(){
+    clearAll()
+    loadContact()
+})
+
+function clearAll() {
+    about.remove()
+    firstItem.remove()
+    secondItem.remove()
+    thirdItem.remove()
+    fourthItem.remove()
+    contactInfo.remove()
+}
 
 function pageLoad() {
     createHeader.classList.add('header')
@@ -46,7 +77,6 @@ function pageLoad() {
 pageLoad()
 
 function loadMenu(){
-    content.removeChild(about)
     parent.classList.add('parent')
     firstItem.classList.add('items')
     secondItem.classList.add('items')
@@ -68,29 +98,14 @@ function loadMenu(){
     secondImg.src = 'https://cdn-icons-png.flaticon.com/512/2094/2094661.png';
     thirdImg.src = 'https://cdn-icons.flaticon.com/png/512/792/premium/792805.png?token=exp=1646679184~hmac=3b2675ac083bbfe4c1f0fedb978c0e40';
     fourthImg.src = 'https://cdn-icons-png.flaticon.com/512/6989/6989539.png';
+
+    firstItem.textContent = 'Pepperoni Pizza: $16';
+    secondItem.textContent = 'Pepperoni and Canadian Bacon Pizza: $18';
+    thirdItem.textContent = 'Supreme Pizza: $20';
+    fourthItem.textContent = 'Cheese Pizza with Peas?: $10';
     
     firstItem.appendChild(firstImg)
     secondItem.appendChild(secondImg)
     thirdItem.appendChild(thirdImg)
     fourthItem.appendChild(fourthImg)
 }
-
-home.addEventListener('click', function(){
-    // removing everything so nothing duplicates
-    createHeader.remove()
-    nav.remove()
-    home.remove()
-    menu.remove()
-    contact.remove()
-    firstItem.remove()
-    secondItem.remove()
-    thirdItem.remove()
-    fourthItem.remove()
-    firstImg.remove()
-    secondImg.remove()
-    thirdImg.remove()
-    fourthImg.remove()
-    pageLoad()
-})
-
-menu.addEventListener('click', loadMenu)

@@ -44,6 +44,7 @@ body {
 .navItems:hover {
     font-size: 32px;
     margin-bottom: -6px;
+    color: rgb(255, 199, 158);
 }
 
 .about {
@@ -61,11 +62,17 @@ body {
 
 .items {
     background-color: rgb(255, 199, 158);
-    opacity: 90%;
+    opacity: 80%;
     border-radius: 25px;
     height: 400px;
     width: 700px;
     margin: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 32px;
+    padding-bottom: 70px;
+    font-weight: 700;
 }
 
 .parent {
@@ -78,4 +85,18 @@ body {
     height: 250px;
     width: 250px;
     padding: 30px;
+}
+
+.info {
+    background-color: rgb(255, 199, 158);
+    opacity: 80%;
+    border-radius: 25px;
+    height: 500px;
+    width: 700px;
+    margin-left: 475px;
+    margin-top: 150px;
+    font-size: 36px;
+    text-align: center;
+    padding: 140px 40px;
+    line-height: 60px;
 }
